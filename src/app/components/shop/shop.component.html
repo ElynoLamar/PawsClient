@@ -1,0 +1,7 @@
+<p-carousel [value]="cars" orientation="vertical" class="center" >
+    <ng-template let-car pTemplate="item" class="center"  >
+        <h4 class="center packsTitle">{{car.name}}</h4>
+        <h6 class="center packPrice">${{car.price}}</h6>
+        <img src="{{car.image}}" class="center packImage">
+    </ng-template>
+</p-carousel>

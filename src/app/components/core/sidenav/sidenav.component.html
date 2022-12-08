@@ -1,0 +1,15 @@
+<div class="navItemsHolder">
+  <div class="navItems">
+    <div *ngFor="let item of items">
+      <p class="navLinks" routerLink="{{item.routerLink}}">{{item.name}}</p>
+    </div>
+  </div>
+  <div>
+
+  </div>
+  <div class="navItems">
+    <div *ngFor="let item of bottomItems">
+      <p class="navLinks" routerLink="{{item.routerLink}}">{{item.name}}</p>
+    </div>
+  </div>
+</div>

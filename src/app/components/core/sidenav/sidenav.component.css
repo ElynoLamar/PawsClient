@@ -1,0 +1,44 @@
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+
+.navItemsHolder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navItems {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: #feffea;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLinks {
+  margin: 24px;
+  align-self: center;
+  
+}
+
+.navLinks:hover {
+  filter: drop-shadow(1px 1px 5px #FFFFFF) !important;
+  
+}
