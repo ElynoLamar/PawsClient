@@ -1,0 +1,36 @@
+<mat-toolbar [style]="{'background-color':'#373f47'}" class="example-toolbar mat-elevation-z6"
+  style="display:flex; justify-content:space-between; color:#FEFFEA">
+  <div class='logoheaderContainer' style="width:10%;cursor:pointer;">
+    <!-- <img id='hamburguer' src="../assets/images/Hamburguer.png" (click)="snav.toggle()"> -->
+    <img src="../../../assets/images/PawsLogo.png" class="logo" (click)="navigate('/')">
+  </div>
+  <div style="display:flex; justify-content:flex-start;width:80%;margin-left:100px;">
+    <a *ngIf="!loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/shop')">Product</a>
+    <a *ngIf="loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/mypaw')">MyPaws</a>
+    <a *ngIf="loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/status')">Status</a>
+    <a *ngIf="loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/ranking')">Ranking</a>
+  </div>
+
+  <div *ngIf="!loggedIn" style="display:flex; justify-content:space-between;width:10%;">
+
+    <p-dialog [(visible)]="userDropdown" [style]="{width: '450px',height: '200px'}" header="Choose an user"
+      [modal]="true" styleClass="p-fluid" [transitionOptions]="'200ms'">
+      <div style="display: flex; gap: 10px;">
+        <p-dropdown *ngIf="userDropdown" [options]="usersList" [(ngModel)]="selectedUser" optionLabel="name"
+          optionValue="id" appendTo="body"></p-dropdown>
+        <button pButton pRipple type="button" label="success" class="p-button-outlined" label="Login"
+          (click)="login()"></button>
+
+      </div>
+    </p-dialog>
+    <a style="cursor:pointer;" (click)="navigate('/contact')">Contact</a>
+    <div style="margin-left: 5px;margin-right: 5px;">|</div>
+    <a (click)='userDropdown = true' style="cursor:pointer;">Login</a>
+
+  </div>
+  <div *ngIf="loggedIn" style="display:flex; justify-content:space-between;width:10%;">
+    <a style="cursor:pointer;margin-right:20px;" (click)="navigate('/shop')">Shop</a>
+    <a style="cursor:pointer;" (click)="navigate('/contact')">Contact</a>
+  </div>
+
+</mat-toolbar>

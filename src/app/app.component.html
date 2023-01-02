@@ -1,21 +1,15 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar [style]="{'background-color':'#373f47'}" class="example-toolbar mat-elevation-z6"
-      style="display:flex; justify-content:space-between;">
-      <div class='logoheaderContainer'>
-        <img  id='hamburguer' src="../assets/images/Hamburguer.png" (click)="snav.toggle()">
-        <img src="../../../assets/images/PawsLogo.png" class="logo">
-    </div>
-  </mat-toolbar>
+  <app-header></app-header>
 
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav  class='sidenav' #snav [opened]="true" [mode]="mobileQuery.matches ? 'over' : 'side'"
-          [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [style.width.px]="200">
-  <app-sidenav></app-sidenav>
-      </mat-sidenav>
-      <mat-sidenav-content style="padding:25px 50px">
-          <router-outlet></router-outlet>
-      </mat-sidenav-content>
+
+    <!-- <mat-sidenav class='sidenav' #snav [opened]="true" [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [style.width.px]="200">
+      <app-sidenav></app-sidenav>
+    </mat-sidenav> -->
+    <mat-sidenav-content style="padding:25px 50px">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 
 </div>
-

@@ -1,37 +1,38 @@
 <div class="container">
-    <div class="blockContainers">
-        <div class='title'>
-            <p>Contacto</p>
-        </div>
-        <div class="blockContainers blockContainerInside">
-            <div class="namesContainer">
-                <div style="margin:5px">
-                    <p class='formTitle'>Your name:</p>
-                    <input type="text" pInputText>
-                </div>
-                <div style="margin:5px">
-                    <p class='formTitle'>‎</p>
-                    <input type="text" pInputText>
-                </div>
-            </div>
-            <div>
-                <p class='formTitle'>Email Address:</p>
-                <input type="text"  style="width:420px;"pInputText>
-            </div>
-            <div>
-                <p class='formTitle'>Phone:</p>
-                <input type="text" style="width:420px;"  pInputText>
-            </div>
-            <div>
-                <p class='formTitle'>Message:</p>
-                <input type="text" class="p-inputtext-lg" style="height:100px; width:420px;" pInputText>
-            </div>
-            <div class="buttonSubmit">
-                <button pButton pRipple type="button" label="Warning" class="p-button-outlined whiteButton"  label="Submit" icon="pi pi-arrow-right" iconPos="right"
-                href = "mailto: abc@example.com"
-                ></button>
-                <!-- <p-button  label="Submit" icon="pi pi-arrow-right" iconPos="right"></p-button> -->
-            </div>
-        </div>
+  <div class="blockContainers">
+    <div class='title'>
+      <p>Contacto</p>
     </div>
+    <div class="blockContainers blockContainerInside">
+      <div class="namesContainer">
+        <div style="margin:5px">
+          <p class='formTitle'>Your name:</p>
+          <input type="text" pInputText [(ngModel)]="firstName">
+        </div>
+        <div style="margin:5px">
+          <p class='formTitle'>‎</p>
+          <input type="text" pInputText [(ngModel)]="lastName">
+        </div>
+      </div>
+      <div>
+        <p class='formTitle'>Email Address:</p>
+        <input type="text" style="width:420px;" pInputText [(ngModel)]="email">
+      </div>
+      <div>
+        <p class='formTitle'>Phone:</p>
+        <input type="text" style="width:420px;" pInputText [(ngModel)]="phone">
+      </div>
+      <div>
+        <p class='formTitle'>Message:</p>
+        <input type="text" class="p-inputtext-lg" style="height:100px; width:420px;" pInputText [(ngModel)]="message">
+      </div>
+      <div class="buttonSubmit">
+        <a pButton pRipple type="button" label="Warning" class="p-button-outlined whiteButton" label="Submit"
+          icon="pi pi-arrow-right" iconPos="right" href="mailto:fernandolamarsantos@gmail.com?Subject=Requesting Info&body=Hello, my name is {{firstName}} {{lastName}} and I would like to be contacted on my email {{email}} and phone number {{phone}} %0D
+         {{message}}
+         %0D Can we schedule a meeting?  %0D Thank you, {{lastName}}, {{firstName}}"></a>
+        <!-- <p-button  label="Submit" icon="pi pi-arrow-right" iconPos="right"></p-button> -->
+      </div>
+    </div>
+  </div>
 </div>

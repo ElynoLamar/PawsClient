@@ -1,7 +1,24 @@
-<p-carousel [value]="cars" orientation="vertical" class="center" >
-    <ng-template let-car pTemplate="item" class="center"  >
-        <h4 class="center packsTitle">{{car.name}}</h4>
-        <h6 class="center packPrice">${{car.price}}</h6>
-        <img src="{{car.image}}" class="center packImage">
-    </ng-template>
-</p-carousel>
+<div style="width: 100%;height: 80%;display: flex;justify-content: space-evenly;">
+  <div>
+    <p-carousel [value]="bundles" class="center">
+      <ng-template let-bundle pTemplate="item" class="center">
+        <img src="{{bundle.image}}" class="center packImage">
+        <h4 class="center packsTitle">{{bundle.name}} skin bundle pack</h4>
+        <h6 class="center packPrice">{{bundle.price}} <img src="../../../../assets/images/PawCoin.png"
+            style="width:30px;margin-left:10px;"></h6>
+        <h6 class="center" *ngIf="userId">
+          <button *ngIf="pawCoins>=bundle.price" pButton pRipple type="button" label="Available to buy"
+            class="p-button-outlined " style="margin-top:15px;margin-left:5px;"
+            (click)="buyPack(bundle.id, bundle.price)"></button>
+          <button *ngIf="pawCoins < bundle.price" pButton pRipple type="button" label="Not enough funds"
+            class="p-button-outlined " disabled="true" style="margin-top:15px;margin-left:5px;"></button>
+        </h6>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div>
+  </div>
+</div>
+<div *ngIf="userId" style="width: 100%;display: flex;justify-content: space-evenly;">
+  Your current paw coins: {{pawCoins}}
+</div>

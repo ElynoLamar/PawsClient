@@ -1,1 +1,30 @@
-<p>my-paw works!</p>
+<div style="display:flex; width:100%; height:90%;justify-content: space-around;align-items: center;">
+  <div style="width:50%">
+    <div *ngIf=" !cats">
+      Não tem gatos associados
+    </div>
+    <p-carousel *ngIf="cats" [value]="cats" class="center">
+      <ng-template let-cat pTemplate="item" class="center">
+        <img src="{{cat.image}}" class="center packImage" style="width: 200px;">
+        <h4 class="center packsTitle">{{cat.name}}</h4>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div style="width:50%;display: flex;flex-direction: column; justify-content:center; gap:20px;align-items: center;">
+    <div *ngFor="let task of userTasks" style="width: 80%;display: flex;">
+      <div style="display:inline-block;width:100%;">
+        <h5>{{task.name}}</h5>
+        <p-progressBar [value]="task.percentage" [style]="{'height': '50px'}"></p-progressBar>
+      </div>
+      <div class="center">
+        <button pButton pRipple type="button" label="Complete" class="p-button-outlined"
+          style="margin-top:15px;margin-left:5px;" (click)="completeTask(task.id)"></button>
+      </div>
+      <div class="center">
+        <img [src]="task.displayMedal" style="width: 30px;margin-top:10px;margin-left:5px;">
+      </div>
+
+    </div>
+
+
+  </div>

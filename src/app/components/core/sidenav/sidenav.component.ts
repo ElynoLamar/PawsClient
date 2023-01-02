@@ -29,6 +29,10 @@ export class SidenavComponent implements OnInit {
       name: 'Ranking',
       routerLink: '/ranking'
     },
+    {
+      name: 'Story',
+      routerLink: '/story'
+    },
   ]
   bottomItems: any[] = [
 

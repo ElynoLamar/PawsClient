@@ -1,0 +1,38 @@
+<div class="containerHolderHolder">
+    <div class="containerHolder">
+        <div class="dropdown-stateContainers">
+            <div class="stateContainers" style="margin-bottom: 15px;">
+                
+                <img class='stateImage' *ngIf="prevState == 'happy'" src="../../../assets/images/Cat_Happy_1.png" alt="">
+                <img class='stateImage' *ngIf="prevState == 'neutral'" src="../../../assets/images/Cat_Neutro.png" alt="">
+                <img class='stateImage' *ngIf="prevState == 'sad'" src="../../../assets/images/Cat_Angry.png" alt="">
+                <img class='stateImage'  *ngIf="prevState == 'gone'" src="../../../assets/images/Cat_Sad.png" alt="">
+            </div>
+            <p-dropdown id="currStates" [(ngModel)]="prevState" [options]="states"></p-dropdown>
+        </div>
+        <div class="blockContainers">
+            <p *ngIf="stories.length == 0" style="font-size: 24px;width:50%;">Generate a possible story explaining the change of
+                happiness states by clicking the button below.</p>
+            <div   class="blockContainers" *ngIf="stories.length > 0">
+                <div class="storyContainers" *ngFor="let story of stories">
+                    <p>{{story.situation.name}}</p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="dropdown-stateContainers">
+            <div class="stateContainers" style="margin-bottom: 15px;">
+                <img class='stateImage' *ngIf="currState == 'happy'" src="../../../assets/images/Cat_Happy_1.png" alt="">
+                <img class='stateImage' *ngIf="currState == 'neutral'" src="../../../assets/images/Cat_Neutro.png" alt="">
+                <img class='stateImage' *ngIf="currState == 'sad'" src="../../../assets/images/Cat_Angry.png" alt="">
+                <img class='stateImage' *ngIf="currState == 'gone'" src="../../../assets/images/Cat_Sad.png" alt="">
+            </div>
+            <p-dropdown id="currStates" [(ngModel)]="currState" [options]="states"></p-dropdown>
+        </div>
+    </div>
+    <div class="actions">
+        <button pButton pRipple type="button" label="Warning" class="p-button-outlined whiteButton"
+            (click)="generateStory()" label="Generate Story" icon="pi pi-arrow-right" iconPos="right"></button>
+    </div>
+</div>

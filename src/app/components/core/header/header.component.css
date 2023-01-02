@@ -1,2 +1,248 @@
-/* The button used to open the sidebar */
+:host ::ng-deep td {
+  font-size: small;
+}
 
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+h1.example-app-name a,
+a:link,
+a:visited {
+  text-decoration: none !important;
+  color: white;
+}
+
+h1.example-app-name:hover {
+  filter: drop-shadow(1px 1px 5px #FFFFFF) !important;
+}
+
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+         causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+  background-color: #FEFFEA;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+         `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.sidenav {
+  background-color: #373f47;
+}
+
+.logoheaderContainer {
+  margin-top: 6px;
+}
+
+.logo {
+  align-self: center;
+  width: 92px;
+  height: 100%;
+  margin-left: 20px;
+}
+
+#hamburguer {
+  color: inherit;
+  background-color: inherit;
+  border: 0;
+  width: 30px;
+  height: 100%;
+
+}
+
+#hamburguer mat-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-toolbar {
+  align-self: center;
+}
+
+#hamburguer:hover {
+  filter: drop-shadow(1px 1px 5px #FFFFFF) !important;
+}
+
+
+.footer {
+  text-align: center;
+  margin-bottom: 5%;
+  border-top: #cccccc;
+  border-top-width: thin;
+  border-top-style: solid;
+  padding-top: 5%;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.mat-tree {
+  padding-top: 10px;
+  overflow: auto;
+  height: 94%;
+}
+
+.mat-tree-node {
+  min-height: 30px;
+}
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+/*
+   * This padding sets alignment of the nested nodes.
+   */
+.example-tree .mat-tree-node {
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.mat-tree-node button {
+  cursor: pointer;
+}
+
+.example-tree .mat-tree-node:hover a {
+  background-color: #ededed
+}
+
+.example-tree .mat-tree-node a {
+  font-weight: calc(500 - (100 * var(--level)));
+  color: #777777;
+  width: 100%;
+  line-height: 1.3rem;
+  padding-left: 0.5rem;
+  border-radius: 0;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: .3rem;
+  text-decoration: none;
+}
+
+
+
+/*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+.example-tree div[role=group]>.mat-tree-node {
+  padding-left: 15px;
+}
+
+.mat-tree-node button {
+  border-radius: 0 !important;
+  border: none;
+  background: transparent;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: 56px;
+}
+
+:host ::ng-deep .p-fluid .p-inputtext {
+  height: 2rem;
+}
+
+:host ::ng-deep .p-column-filter-row .p-column-filter-menu-button,
+:host ::ng-deep .p-column-filter .p-column-filter-clear-button {
+  display: none !important;
+}
+
+:host ::ng-deep .p-toolbar {
+  padding: 4px !important;
+}
+
+:host ::ng-deep .p-tabmenuitem {
+  width: 100%;
+}
+
+:host ::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+  background-color: #385048;
+  border-color: #385048;
+  color: white;
+}
+
+/* .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+    background: #617c8a;
+    border-color: #617c8a;
+    color: #ffffff;
+  } */
+
+:host ::ng-deep .p-tabmenu-nav {
+  margin-right: -2px;
+}
+
+:host ::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  /* width: auto; */
+  padding-top: 4px;
+  padding-bottom: 4px;
+  /* padding: 4px 1.18rem !important; */
+  /* background: #4f8877; */
+}
+
+:host ::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  background: #7B95A3;
+  border-color: #7B95A3;
+  color: #FFFFFF;
+}
+
+:host ::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  background: #AFD3C8;
+  border-color: #7B95A3;
+  color: #385048;
+}
+
+:host ::ng-deep .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active {
+  background-color: #d90096 !important;
+  border: 1px solid #d600d9;
+}
+
+:host ::ng-deep .blur {
+
+  cursor: not-allowed;
+}
+
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #373f47;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.maxheader {
+  width: 100%;
+}
