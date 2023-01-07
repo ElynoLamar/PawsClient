@@ -45,15 +45,28 @@ export class MyPawComponent implements OnInit {
           bronze_medal: this.userTasks[i].bronze_medal,
           wood_medal: this.userTasks[i].wood_medal
         }
+        let points = object.gold_medal * 40 + object.silver_medal * 25 + object.bronze_medal * 10 + object.wood_medal * 0
+        points = points / this.userTasks[i].done
         const getMax = Object.keys(object)
           .filter(x => {
             return object[x] == Math.max.apply(null,
               Object.values(object));
           })
-        if (getMax.length == 1)
-          this.userTasks[i].displayMedal = `../../../../assets/images/medals/${getMax[0]}.png`
+        if (points >= 35)
+          this.userTasks[i].displayMedal = `../../../../assets/images/medals/gold_medal.png`
+        else if (points >= 20)
+          this.userTasks[i].displayMedal = `../../../../assets/images/medals/silver_medal.png`
+        else if (points >= 10)
+          this.userTasks[i].displayMedal = `../../../../assets/images/medals/bronze_medal.png`
         else
           this.userTasks[i].displayMedal = `../../../../assets/images/medals/wood_medal.png`
+        // if (getMax.length == 1)
+        //   this.userTasks[i].displayMedal = `../../../../assets/images/medals/${getMax[0]}.png`
+        // else if (getMax.length > 1) {
+        //   console.log(getMax)
+        // } else
+        //   this.userTasks[i].displayMedal = `../../../../assets/images/medals/wood_medal.png`
+
         if (this.userTasks[i] && this.userTasks[i].done > 0)
           this.userTasks[i].percentage = this.userTasks[i].done / this.userTasks[i].quantity * 100
         else this.userTasks[i].percentage = 0

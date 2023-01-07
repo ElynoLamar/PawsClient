@@ -5,10 +5,11 @@
     <img src="../../../assets/images/PawsLogo.png" class="logo" (click)="navigate('/')">
   </div>
   <div style="display:flex; justify-content:flex-start;width:80%;margin-left:100px;">
-    <a *ngIf="!loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/shop')">Product</a>
+    <a *ngIf="!loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/story')">Product</a>
     <a *ngIf="loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/mypaw')">MyPaws</a>
-    <a *ngIf="loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/status')">Status</a>
+    <!-- <a *ngIf="loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/status')">Status</a> -->
     <a *ngIf="loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/ranking')">Ranking</a>
+    <a *ngIf="loggedIn" style="cursor:pointer;padding-right: 15px;" (click)="navigate('/story')">Story</a>
   </div>
 
   <div *ngIf="!loggedIn" style="display:flex; justify-content:space-between;width:10%;">

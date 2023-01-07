@@ -17,8 +17,10 @@
         <p-progressBar [value]="task.percentage" [style]="{'height': '50px'}"></p-progressBar>
       </div>
       <div class="center">
-        <button pButton pRipple type="button" label="Complete" class="p-button-outlined"
-          style="margin-top:15px;margin-left:5px;" (click)="completeTask(task.id)"></button>
+        <button *ngIf="task.done >= task.quantity" disabled=true pButton pRipple type="button" label="Complete"
+          class="p-button-outlined" style="margin-top:15px;margin-left:5px;" (click)="completeTask(task.id)"></button>
+        <button *ngIf="task.done < task.quantity" pButton pRipple type="button" label="Complete"
+          class="p-button-outlined" style="margin-top:15px;margin-left:5px;" (click)="completeTask(task.id)"></button>
       </div>
       <div class="center">
         <img [src]="task.displayMedal" style="width: 30px;margin-top:10px;margin-left:5px;">

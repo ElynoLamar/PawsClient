@@ -15,7 +15,7 @@ export class StoryService extends RequestService {
   async generateStory(prev: string, curr: string): Promise<any> {
     let response: any;
     try {
-      response = await this.request(`story?prevState=${prev}&currState=${curr}`) as any;
+      response = await this.request(`/story?prevState=${prev}&currState=${curr}`) as any;
       console.log(response)
     }
     catch (error) {

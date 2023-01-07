@@ -1,87 +1,109 @@
 :root {
-    --podiumHeight: 60%;
+  --podiumHeight: 60%;
 }
 
 .containersHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 90%;
 }
 
 .topContainer {
-    width: 80%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
 }
 
 .bottomContainer {
-    width: 80%;
-    height: 15%;
-    background-color: #AB92BF;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 80%;
+  height: 15%;
+  background-color: #AB92BF;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .podium {
-    width: 180px;
-    background-color: #AB92BF;
-    border-radius: 25px;
-    align-self: flex-end;
-    margin: 15px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
+  width: 180px;
+  background-color: #AB92BF;
+  border-radius: 25px;
+  align-self: flex-end;
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .firstPlace {
-    height: 245px;
-    /* height:60%; */
+  height: 245px;
+  /* height:60%; */
 }
 
 .secondPlace {
-    height: 210px;
+  height: 210px;
 }
-.PodiumPlaceHolders{
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: center;
+
+.PodiumPlaceHolders {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
+
 .thirdPlace {
-    height: 180px;
+  height: 180px;
 }
 
 .podiumImage {
-    width: 70px;
-    height: 70px;
-    margin-top: 15px;
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
 }
+
 .avatarPodium {
-    width: 100px;
-    height: 100px;
-    margin-top: 15px;
+  width: 100px;
+  height: 100px;
+  margin-top: 15px;
 }
+
 .underPodiumAvatar {
-    width: 50px;
-    height: 50px;
-    margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
 }
 
 .podiumText {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .bottomPodiumText {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items:center;
-    font-size: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
+
+.blackboxholder {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+
+}
+
+.blackbox {
+  width: 2\00px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #373f47;
 }
